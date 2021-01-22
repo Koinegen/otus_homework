@@ -1,0 +1,308 @@
+Script started on Fri 22 Jan 2021 05:53:45 PM UTC
+]0;root@localhost:~[?1034h[root@localhost ~]# 
+[K[root@localhost ~]# df -h
+Filesystem               Size  Used Avail Use% Mounted on
+devtmpfs                 982M     0  982M   0% /dev
+tmpfs                    995M     0  995M   0% /dev/shm
+tmpfs                    995M  8.4M  987M   1% /run
+tmpfs                    995M     0  995M   0% /sys/fs/cgroup
+/dev/mapper/centos-root  8.0G  1.7G  6.4G  21% /
+/dev/sda1               1014M  169M  846M  17% /boot
+tmpfs                    199M     0  199M   0% /run/user/1000
+]0;root@localhost:~[root@localhost ~]# vgs
+  VG     #PV #LV #SN Attr   VSize  VFree
+  centos   1   2   0 wz--n- <9.00g    0 
+]0;root@localhost:~[root@localhost ~]# vgrename centos OtusRoot
+  Volume group "centos" successfully renamed to "OtusRoot"
+]0;root@localhost:~[root@localhost ~]# vi /etc/fstab
+# /etc/fstab
+# Created by anaconda on Fri Nov  6 18:04:18 2020
+#
+# Accessible filesystems, by reference, are maintained under '/dev/disk'
+# See man pages fstab(5), findfs(8), mount(8) and/or blkid(8) for more info
+#
+/dev/mapper/centos-root /[23Cxfs     defaults[8C0 0
+UUID=b0cc7bf9-a7c7-46bc-8f0e-0e3fe01b4d3d /boot[19Cxfs     defaults[8C0 0
+/dev/mapper/centos-swap swap[20Cswap    defaults[8C0 0
+                                                                                                                                                                                                                  [14;1H~                                                                                                              [15;1H~                                                                                                              [16;1H~                                                                                                              [17;1H~                                                                                                              [18;1H~                                                                                                              [19;1H~                                                                                                              [20;1H~                                                                                                              [21;1H~                                                                                                              [22;1H~                                                                                                              [23;1H~                                                                                                              [24;1H~                                                                                                              [25;1H~                                                                                                              [26;1H~                                                                                                              [27;1H~                                                                                                              [28;1H~                                                                                                              [29;1H~                                                                                                              [30;1H~                                                                                                              [31;1H~                                                                                                              [32;1H~                                                                                                              [1;1H[?12l[?25h
+
+
+
+
+
+"/etc/fstab" 11L, 469C written
+
+
+[root@localhost ~]# vi /etc/fsta/grub
+/etc/default/grub" 7L, 343C[1;1HGRUB_TIMEOUT=5
+GRUB_DISTRIBUTOR="$(sed 's, release .*$,,g' /etc/system-release)"
+GRUB_DEFAULT=saved
+GRUB_DISABLE_SUBMENU=true
+GRUB_TERMINAL_OUTPUT="console"
+GRUB_CMDLINE_LINUX="ipv6.disable=1 net.ifnames=0 biosdevname=0 crashkernel=auto spectre_v2=retpoline rd.lvm.lv==[7;1Hcentos/root rd.lvm.lv=centos/swap rhgb quiet"
+GRUB_DISABLE_RECOVERY="true"
+[94m~                                                                                                              [10;1H~                                                                                                              [11;1H~                                                                                                              [12;1H~                                                                                                              [13;1H~                                                                                                              [14;1H~                                                                                                              [15;1H~                                                                                                              [16;1H~                                                                                                              [17;1H~                                                                                                              [18;1H~                                                                                                              [19;1H~                                                                                                              [20;1H~                                                                                                              [21;1H~                                                                                                              [22;1H~                                                                                                              [23;1H~                                                                                                              [24;1H~                                                                                                              [25;1H~                                                                                                              [26;1H~                                                                                                              [27;1H~                                                                                                              [28;1H~                                                                                                              [29;1H~                                                                                                              [30;1H~                                                                                                              [31;1H~                                                                                                              [32;1H~                                                                                                              [1;1H[?12l[?25h
+
+
+
+
+
+
+[6;1H
+
+[6;1H
+
+[?25l[m[33;1H[1m-- INSERT --[m[33;13H[K[8;1H[?12l[?25h[6;1HGRUB_CMDLINE_LINUX="ipv6.disable=1 net.ifnames=0 biosdevname=0 crashkernel=auto spectre_v2=retpoline rd.lvm.lv
+centos/root[?25l/root rd.lvm.lv=centos/swap rhgb quiet"[7;45H[K[7;6H[?12l[?25h[?25l/root rd.lvm.lv=centos/swap rhgb quiet"[7;44H[K[7;5H[?12l[?25h[?25l/root rd.lvm.lv=centos/swap rhgb quiet"[7;43H[K[7;4H[?12l[?25h[?25l/root rd.lvm.lv=centos/swap rhgb quiet"[7;42H[K[7;3H[?12l[?25h[?25l/root rd.lvm.lv=centos/swap rhgb quiet"[7;41H[K[7;2H[?12l[?25h[?25l/root rd.lvm.lv=centos/swap rhgb quiet"[7;40H[K[7;1H[?12l[?25h[?25lO/root rd.lvm.lv=centos/swap rhgb quiet"
+O[?12l[?25h[?25lt/root rd.lvm.lv=centos/swap rhgb quiet"
+Ot[?12l[?25h[?25lu/root rd.lvm.lv=centos/swap rhgb quiet"
+Otu[?12l[?25h[?25ls/root rd.lvm.lv=centos/swap rhgb quiet"
+Otus[?12l[?25h[?25lR/root rd.lvm.lv=centos/swap rhgb quiet"
+OtusR[?12l[?25h[?25lo/root rd.lvm.lv=centos/swap rhgb quiet"[7;7H[?12l[?25h[?25lo/root rd.lvm.lv=centos/swap rhgb quiet"[7;8H[?12l[?25h[?25lt/root rd.lvm.lv=centos/swap rhgb quiet"[7;9H[?12l[?25h/root rd.lvm.lv=centos[?25l/swap rhgb quiet"[7;47H[K[7;30H[?12l[?25h[?25l/swap rhgb quiet"[7;46H[K[7;29H[?12l[?25h[?25l/swap rhgb quiet"[7;45H[K[7;28H[?12l[?25h[?25l/swap rhgb quiet"[7;44H[K[7;27H[?12l[?25h[?25l/swap rhgb quiet"[7;43H[K[7;26H[?12l[?25h[?25l/swap rhgb quiet"[7;42H[K[7;25H[?12l[?25h[?25lO/swap rhgb quiet"[7;26H[?12l[?25h[?25lt/swap rhgb quiet"[7;27H[?12l[?25h[?25lu/swap rhgb quiet"[7;28H[?12l[?25h[?25ls/swap rhgb quiet"[7;29H[?12l[?25h[?25lR/swap rhgb quiet"[7;30H[?12l[?25h[?25lo/swap rhgb quiet"[7;31H[?12l[?25h[?25lo/swap rhgb quiet"[7;32H[?12l[?25h[?25lt/swap rhgb quiet"[7;33H[?12l[?25h[33;1H[K[7;32H[?25l[?12l[?25h[?25l[33;1H:[?12l[?25hwq
+[?25l"/etc/default/grub" 7L, 347C written
+
+
+[?1l>[?12l[?25h[?1049l]0;root@localhost:~[root@localhost ~]# vi /boot/grub2/grub.cfg
+[?1049h[?1h=[1;33r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[33;1H"/boot/grub2/grub.cfg" 158L, 5385C[1;1H#
+# DO NOT EDIT THIS FILE
+#
+# It is automatically generated by grub2-mkconfig using templates
+# from /etc/grub.d and settings from /etc/default/grub
+#
+
+### BEGIN /etc/grub.d/00_header ###
+set pager=1
+
+if [ -s $prefix/grubenv ]; then
+  load_env
+fi
+if [ "${next_entry}" ] ; then
+   set default="${next_entry}"
+   set next_entry=
+   save_env next_entry
+   set boot_once=true
+else
+   set default="${saved_entry}"
+fi
+
+if [ x"${feature_menuentry_id}" = xy ]; then
+  menuentry_id_option="--id"
+else
+  menuentry_id_option=""
+fi
+
+export menuentry_id_option
+
+if [ "${prev_saved_entry}" ]; then
+  set saved_entry="${prev_saved_entry}"[1;1H[?12l[?25h[?25l[27m[m[H[2J[1;1Hif [ "${prev_saved_entry}" ]; then
+  set saved_entry="${prev_saved_entry}"
+  save_env saved_entry
+  set prev_saved_entry=
+  save_env prev_saved_entry
+  set boot_once=true
+fi
+
+function savedefault {
+  if [ -z "${boot_once}" ]; then
+    saved_entry="${chosen}"
+    save_env saved_entry
+  fi
+}
+
+function load_video {
+  if [ x$feature_all_video_module = xy ]; then
+    insmod all_video
+  else
+    insmod efi_gop
+    insmod efi_uga
+    insmod ieee1275_fb
+    insmod vbe
+    insmod vga
+    insmod video_bochs
+    insmod video_cirrus
+  fi
+}
+
+terminal_output console
+if [ x$feature_timeout_style = xy ] ; then
+  set timeout_style=menu[1;1H[?12l[?25h[?25l[27m[m[H[2J[1;1Hif [ x$feature_timeout_style = xy ] ; then
+  set timeout_style=menu
+  set timeout=5
+# Fallback normal timeout code in case the timeout_style feature is
+# unavailable.
+else
+  set timeout=5
+fi
+### END /etc/grub.d/00_header ###
+
+### BEGIN /etc/grub.d/00_tuned ###
+set tuned_params=""
+set tuned_initrd=""
+### END /etc/grub.d/00_tuned ###
+
+### BEGIN /etc/grub.d/01_users ###
+if [ -f ${prefix}/user.cfg ]; then
+  source ${prefix}/user.cfg
+  if [ -n "${GRUB2_PASSWORD}" ]; then
+    set superusers="root"
+    export superusers
+    password_pbkdf2 root ${GRUB2_PASSWORD}
+  fi
+fi
+### END /etc/grub.d/01_users ###
+
+### BEGIN /etc/grub.d/10_linux ###
+menuentry 'CentOS Linux (3.10.0-1127.19.1.el7.x86_64) 7 (Core)' --class centos --class gnu-linux --class gnu ---[29;1Hclass os --unrestricted $menuentry_id_option 'gnulinux-5.9.6-1.el7.elrepo.x86_64-advanced-94dacce1-1a50-455b-811[30;1H2d-d28e607bc9ad' {[31;9Hload_video[32;9Hset gfxpayload=keep[1;1H[?12l[?25h[?25l[27m[m[H[2J[1;9Hload_video[2;9Hset gfxpayload=keep[3;9Hinsmod gzio[4;9Hinsmod part_msdos[5;9Hinsmod xfs[6;9Hset root='hd0,msdos1'[7;9Hif [ x$feature_platform_search_hint = xy ]; then[8;11Hsearch --no-floppy --fs-uuid --set=root --hint-bios=hd0,msdos1 --hint-efi=hd0,msdos1 --hint-baremetall[9;1H=ahci0,msdos1 --hint='hd0,msdos1'  b0cc7bf9-a7c7-46bc-8f0e-0e3fe01b4d3d[10;9Helse[11;11Hsearch --no-floppy --fs-uuid --set=root b0cc7bf9-a7c7-46bc-8f0e-0e3fe01b4d3d[12;9Hfi[13;9Hlinux16 /vmlinuz-3.10.0-1127.19.1.el7.x86_64 root=/dev/mapper/centos-root ro ipv6.disable=1 net.ifnamess[14;1H=0 biosdevname=0 crashkernel=auto spectre_v2=retpoline rd.lvm.lv=centos/root rd.lvm.lv=centos/swap rhgb quiet LL[15;1HANG=en_US.UTF-8[16;9Hinitrd16 /initramfs-3.10.0-1127.19.1.el7.x86_64.img
+}
+menuentry 'CentOS Linux (5.9.6-1.el7.elrepo.x86_64) 7 (Core)' --class centos --class gnu-linux --class gnu --cll[19;1Hass os --unrestricted $menuentry_id_option 'gnulinux-5.9.6-1.el7.elrepo.x86_64-advanced-94dacce1-1a50-455b-812dd[20;1H-d28e607bc9ad' {[21;9Hload_video[22;9Hset gfxpayload=keep[23;9Hinsmod gzio[24;9Hinsmod part_msdos[25;9Hinsmod xfs[26;9Hset root='hd0,msdos1'[27;9Hif [ x$feature_platform_search_hint = xy ]; then[28;11Hsearch --no-floppy --fs-uuid --set=root --hint-bios=hd0,msdos1 --hint-efi=hd0,msdos1 --hint-baremetall[29;1H=ahci0,msdos1 --hint='hd0,msdos1'  b0cc7bf9-a7c7-46bc-8f0e-0e3fe01b4d3d[30;9Helse[31;11Hsearch --no-floppy --fs-uuid --set=root b0cc7bf9-a7c7-46bc-8f0e-0e3fe01b4d3d[32;9Hfi[1;9H[?12l[?25h[2;9H[3;9H[4;9H[5;9H[6;9H[7;9H[8;9H[10;9H[11;9H[12;9H[13;9H[16;9H[13;9Hlinux16 /vmlinuz-3.10.0-1127.19.1.el7.x86_64 root=/dev/mapper/centostos[?25l[33;1H[1m-- INSERT --[13;77H[?12l[?25h[?25l[m-root ro ipv6.disable=1 net.ifnames==[14;1H0 biosdevname=0 crashkernel=auto spectre_v2=retpoline rd.lvm.lv=centos/root rd.lvm.lv=centos/swap rhgb quiet LAA[15;1HNG=en_US.UTF-8[15;15H[K[13;76H[?12l[?25h[?25l-root ro ipv6.disable=1 net.ifnames=00[14;1H biosdevname=0 crashkernel=auto spectre_v2=retpoline rd.lvm.lv=centos/root rd.lvm.lv=centos/swap rhgb quiet LANN[15;1HG=en_US.UTF-8[15;14H[K[13;75H[?12l[?25h[?25l-root ro ipv6.disable=1 net.ifnames=0  [14;1Hbiosdevname=0 crashkernel=auto spectre_v2=retpoline rd.lvm.lv=centos/root rd.lvm.lv=centos/swap rhgb quiet LANGG[15;1H=en_US.UTF-8[15;13H[K[13;74H[?12l[?25h[?25l-root ro ipv6.disable=1 net.ifnames=0 bb[14;1Hiosdevname=0 crashkernel=auto spectre_v2=retpoline rd.lvm.lv=centos/root rd.lvm.lv=centos/swap rhgb quiet LANG==[15;1Hen_US.UTF-8[15;12H[K[13;73H[?12l[?25h[?25l-root ro ipv6.disable=1 net.ifnames=0 bii[14;1Hosdevname=0 crashkernel=auto spectre_v2=retpoline rd.lvm.lv=centos/root rd.lvm.lv=centos/swap rhgb quiet LANG=ee[15;1Hn_US.UTF-8[15;11H[K[13;72H[?12l[?25h[?25l-root ro ipv6.disable=1 net.ifnames=0 bioo[14;1Hsdevname=0 crashkernel=auto spectre_v2=retpoline rd.lvm.lv=centos/root rd.lvm.lv=centos/swap rhgb quiet LANG=enn[15;1H_US.UTF-8[15;10H[K[13;71H[?12l[?25h[?25lO-root ro ipv6.disable=1 net.ifnames=0 bii[14;1Hosdevname=0 crashkernel=auto spectre_v2=retpoline rd.lvm.lv=centos/root rd.lvm.lv=centos/swap rhgb quiet LANG=ee[15;1Hn_US.UTF-8[13;72H[?12l[?25h[?25lt-root ro ipv6.disable=1 net.ifnames=0 bb[14;1Hiosdevname=0 crashkernel=auto spectre_v2=retpoline rd.lvm.lv=centos/root rd.lvm.lv=centos/swap rhgb quiet LANG==[15;1Hen_US.UTF-8[13;73H[?12l[?25h[?25lu-root ro ipv6.disable=1 net.ifnames=0  [14;1Hbiosdevname=0 crashkernel=auto spectre_v2=retpoline rd.lvm.lv=centos/root rd.lvm.lv=centos/swap rhgb quiet LANGG[15;1H=en_US.UTF-8[13;74H[?12l[?25h[?25ls-root ro ipv6.disable=1 net.ifnames=00[14;1H biosdevname=0 crashkernel=auto spectre_v2=retpoline rd.lvm.lv=centos/root rd.lvm.lv=centos/swap rhgb quiet LANN[15;1HG=en_US.UTF-8[13;75H[?12l[?25h[?25lR-root ro ipv6.disable=1 net.ifnames==[14;1H0 biosdevname=0 crashkernel=auto spectre_v2=retpoline rd.lvm.lv=centos/root rd.lvm.lv=centos/swap rhgb quiet LAA[15;1HNG=en_US.UTF-8[13;76H[?12l[?25h[?25lo-root ro ipv6.disable=1 net.ifnamess[14;1H=0 biosdevname=0 crashkernel=auto spectre_v2=retpoline rd.lvm.lv=centos/root rd.lvm.lv=centos/swap rhgb quiet LL[15;1HANG=en_US.UTF-8[13;77H[?12l[?25h[?25lo-root ro ipv6.disable=1 net.ifnamee[14;1Hs=0 biosdevname=0 crashkernel=auto spectre_v2=retpoline rd.lvm.lv=centos/root rd.lvm.lv=centos/swap rhgb quiet  [15;1HLANG=en_US.UTF-8[13;78H[?12l[?25h[?25lt-root ro ipv6.disable=1 net.ifnamm[14;1Hes=0 biosdevname=0 crashkernel=auto spectre_v2=retpoline rd.lvm.lv=centos/root rd.lvm.lv=centos/swap rhgb quiett[15;1H LANG=en_US.UTF-8[13;79H[?12l[?25h-root ro ipv6.disable=1 net.ifna
+es=0 biosdevname=0 crashkernel=auto spectre_v2=retpoline rd.lvm.lv=centos[?25l/root rd.lvm.lv=centos/swap rhgb quiet  [15;1HLANG=en_US.UTF-8[15;17H[K[14;73H[?12l[?25h[?25l/root rd.lvm.lv=centos/swap rhgb quiet LL[15;1HANG=en_US.UTF-8[15;16H[K[14;72H[?12l[?25h[?25l/root rd.lvm.lv=centos/swap rhgb quiet LAA[15;1HNG=en_US.UTF-8[15;15H[K[14;71H[?12l[?25h[?25l/root rd.lvm.lv=centos/swap rhgb quiet LANN[15;1HG=en_US.UTF-8[15;14H[K[14;70H[?12l[?25h[?25l/root rd.lvm.lv=centos/swap rhgb quiet LANGG[15;1H=en_US.UTF-8[15;13H[K[14;69H[?12l[?25h[?25l/root rd.lvm.lv=centos/swap rhgb quiet LANG==[15;1Hen_US.UTF-8[15;12H[K[14;68H[?12l[?25h[?25lO/root rd.lvm.lv=centos/swap rhgb quiet LANGG[15;1H=en_US.UTF-8[14;69H[?12l[?25h[?25lt/root rd.lvm.lv=centos/swap rhgb quiet LANN[15;1HG=en_US.UTF-8[14;70H[?12l[?25h[?25lu/root rd.lvm.lv=centos/swap rhgb quiet LAA[15;1HNG=en_US.UTF-8[14;71H[?12l[?25h[?25ls/root rd.lvm.lv=centos/swap rhgb quiet LL[15;1HANG=en_US.UTF-8[14;72H[?12l[?25h[?25lR/root rd.lvm.lv=centos/swap rhgb quiet  [15;1HLANG=en_US.UTF-8[14;73H[?12l[?25h[?25lo/root rd.lvm.lv=centos/swap rhgb quiett[15;1H LANG=en_US.UTF-8[14;74H[?12l[?25h[?25lo/root rd.lvm.lv=centos/swap rhgb quiee[15;1Ht LANG=en_US.UTF-8[14;75H[?12l[?25h[?25lt/root rd.lvm.lv=centos/swap rhgb quii[15;1Het LANG=en_US.UTF-8[14;76H[?12l[?25h/root rd.lvm.lv=centos[?25l/swap rhgb quiee[15;1Ht LANG=en_US.UTF-8[15;19H[K[14;97H[?12l[?25h[?25l/swap rhgb quiett[15;1H LANG=en_US.UTF-8[15;18H[K[14;96H[?12l[?25h[?25l/swap rhgb quiet  [15;1HLANG=en_US.UTF-8[15;17H[K[14;95H[?12l[?25h[?25l/swap rhgb quiet LL[15;1HANG=en_US.UTF-8[15;16H[K[14;94H[?12l[?25h[?25l/swap rhgb quiet LAA[15;1HNG=en_US.UTF-8[15;15H[K[14;93H[?12l[?25h[?25l/swap rhgb quiet LANN[15;1HG=en_US.UTF-8[15;14H[K[14;92H[?12l[?25h[?25lO/swap rhgb quiet LAA[15;1HNG=en_US.UTF-8[14;93H[?12l[?25h[?25lt/swap rhgb quiet LL[15;1HANG=en_US.UTF-8[14;94H[?12l[?25h[?25lu/swap rhgb quiet  [15;1HLANG=en_US.UTF-8[14;95H[?12l[?25h[?25ls/swap rhgb quiett[15;1H LANG=en_US.UTF-8[14;96H[?12l[?25h[?25lR/swap rhgb quiee[15;1Ht LANG=en_US.UTF-8[14;97H[?12l[?25h[?25lo/swap rhgb quii[15;1Het LANG=en_US.UTF-8[14;98H[?12l[?25h[?25lo/swap rhgb quu[15;1Hiet LANG=en_US.UTF-8[14;99H[?12l[?25h[?25lt/swap rhgb qq[15;1Huiet LANG=en_US.UTF-8[14;100H[?12l[?25h/swap[16;60H
+}[19;105H[21;19H[22;28H[23;20H[24;26H[25;19H[26;30H[27;57H[29;72H[30;13H[31;87H[32;11H[?25l[1;32r[1;1H[2M[1;33r[31;9Hlinux16 /vmlinuz-5.9.6-1.el7.elrepo.x86_64 root=/dev/mapper/centos-root ro ipv6.disable=1 net.ifnames=00[32;1H biosdevname=0 crashkernel=auto spectre_v2=retpoline rd.lvm.lv=centos/root rd.lvm.lv=centos/swap rhgb quiet[?12l[?25h[?25l/swap rhgb quiet[32;107H[K[32;91H[?12l[?25h[?25l/swap rhgb quiet[32;106H[K[32;90H[?12l[?25h[?25l/swap rhgb quiet[32;105H[K[32;89H[?12l[?25h[?25l/swap rhgb quiet[32;104H[K[32;88H[?12l[?25h[?25l/swap rhgb quiet[32;103H[K[32;87H[?12l[?25h[?25l/swap rhgb quiet[32;102H[K[32;86H[?12l[?25h[?25lO/swap rhgb quiet[32;87H[?12l[?25h[?25lt/swap rhgb quiet[32;88H[?12l[?25h[?25lu/swap rhgb quiet[32;89H[?12l[?25h[?25ls/swap rhgb quiet[32;90H[?12l[?25h[?25lR/swap rhgb quiet[32;91H[?12l[?25h[?25lo/swap rhgb quiet[32;92H[?12l[?25h[?25lo/swap rhgb quiet[32;93H[?12l[?25h[?25lt/swap rhgb quiet[32;94H[?12l[?25h[?25l/root rd.lvm.lv=OtusRoot/swap rhgb quiet[32;109H[K[32;69H[?12l[?25h[?25l/root rd.lvm.lv=OtusRoot/swap rhgb quiet[32;108H[K[32;68H[?12l[?25h[?25l/root rd.lvm.lv=OtusRoot/swap rhgb quiet[32;107H[K[32;67H[?12l[?25h[?25l/root rd.lvm.lv=OtusRoot/swap rhgb quiet[32;106H[K[32;66H[?12l[?25h[?25l/root rd.lvm.lv=OtusRoot/swap rhgb quiet[32;105H[K[32;65H[?12l[?25h[?25l/root rd.lvm.lv=OtusRoot/swap rhgb quiet[32;104H[K[32;64H[?12l[?25h[?25lO/root rd.lvm.lv=OtusRoot/swap rhgb quiet[32;65H[?12l[?25h[?25lt/root rd.lvm.lv=OtusRoot/swap rhgb quiet[32;66H[?12l[?25h[?25lu/root rd.lvm.lv=OtusRoot/swap rhgb quiet[32;67H[?12l[?25h[?25ls/root rd.lvm.lv=OtusRoot/swap rhgb quiet[32;68H[?12l[?25h[?25lR/root rd.lvm.lv=OtusRoot/swap rhgb quiet[32;69H[?12l[?25h[?25lo/root rd.lvm.lv=OtusRoot/swap rhgb quiet[32;70H[?12l[?25h[?25lo/root rd.lvm.lv=OtusRoot/swap rhgb quiet[32;71H[?12l[?25h[?25lt/root rd.lvm.lv=OtusRoot/swap rhgb quiet[32;72H[?12l[?25h[31;111H[?25l-root ro ipv6.disable=1 net.ifnames=0  [32;1Hbiosdevname=0 crashkernel=auto spectre_v2=retpoline rd.lvm.lv=OtusRoot/root rd.lvm.lv=OtusRoot/swap rhgb quiet[32;111H[K[31;74H[?12l[?25h[?25l-root ro ipv6.disable=1 net.ifnames=0 bb[32;1Hiosdevname=0 crashkernel=auto spectre_v2=retpoline rd.lvm.lv=OtusRoot/root rd.lvm.lv=OtusRoot/swap rhgb quiet[32;110H[K[31;73H[?12l[?25h[?25l-root ro ipv6.disable=1 net.ifnames=0 bii[32;1Hosdevname=0 crashkernel=auto spectre_v2=retpoline rd.lvm.lv=OtusRoot/root rd.lvm.lv=OtusRoot/swap rhgb quiet[32;109H[K[31;72H[?12l[?25h[?25l-root ro ipv6.disable=1 net.ifnames=0 bioo[32;1Hsdevname=0 crashkernel=auto spectre_v2=retpoline rd.lvm.lv=OtusRoot/root rd.lvm.lv=OtusRoot/swap rhgb quiet[32;108H[K[31;71H[?12l[?25h[?25l-root ro ipv6.disable=1 net.ifnames=0 bioss[32;1Hdevname=0 crashkernel=auto spectre_v2=retpoline rd.lvm.lv=OtusRoot/root rd.lvm.lv=OtusRoot/swap rhgb quiet[32;107H[K[31;70H[?12l[?25h[?25l-root ro ipv6.disable=1 net.ifnames=0 biosdd[32;1Hevname=0 crashkernel=auto spectre_v2=retpoline rd.lvm.lv=OtusRoot/root rd.lvm.lv=OtusRoot/swap rhgb quiet[32;106H[K[31;69H[?12l[?25h[?25lO-root ro ipv6.disable=1 net.ifnames=0 bioss[32;1Hdevname=0 crashkernel=auto spectre_v2=retpoline rd.lvm.lv=OtusRoot/root rd.lvm.lv=OtusRoot/swap rhgb quiet[31;70H[?12l[?25h[?25lt-root ro ipv6.disable=1 net.ifnames=0 bioo[32;1Hsdevname=0 crashkernel=auto spectre_v2=retpoline rd.lvm.lv=OtusRoot/root rd.lvm.lv=OtusRoot/swap rhgb quiet[31;71H[?12l[?25h[?25lu-root ro ipv6.disable=1 net.ifnames=0 bii[32;1Hosdevname=0 crashkernel=auto spectre_v2=retpoline rd.lvm.lv=OtusRoot/root rd.lvm.lv=OtusRoot/swap rhgb quiet[31;72H[?12l[?25h[?25ls-root ro ipv6.disable=1 net.ifnames=0 bb[32;1Hiosdevname=0 crashkernel=auto spectre_v2=retpoline rd.lvm.lv=OtusRoot/root rd.lvm.lv=OtusRoot/swap rhgb quiet[31;73H[?12l[?25h[?25lR-root ro ipv6.disable=1 net.ifnames=0  [32;1Hbiosdevname=0 crashkernel=auto spectre_v2=retpoline rd.lvm.lv=OtusRoot/root rd.lvm.lv=OtusRoot/swap rhgb quiet[31;74H[?12l[?25h[?25lo-root ro ipv6.disable=1 net.ifnames=00[32;1H biosdevname=0 crashkernel=auto spectre_v2=retpoline rd.lvm.lv=OtusRoot/root rd.lvm.lv=OtusRoot/swap rhgb quiet[31;75H[?12l[?25h[?25lo-root ro ipv6.disable=1 net.ifnames==[32;1H0 biosdevname=0 crashkernel=auto spectre_v2=retpoline rd.lvm.lv=OtusRoot/root rd.lvm.lv=OtusRoot/swap rhgb quie[31;1H[94m@                                                                                                              [32;1H@                                                                                                              [1;32r[m[32;1H
+[1;33r[30;1H        linux16 /vmlinuz-5.9.6-1.el7.elrepo.x86_64 root=/dev/mapper/OtusRoo-root ro ipv6.disable=1 net.ifnames==[31;1H0 biosdevname=0 crashkernel=auto spectre_v2=retpoline rd.lvm.lv=OtusRoot/root rd.lvm.lv=OtusRoot/swap rhgb quiee[32;1Ht[30;76H[?12l[?25h[?25lt-root ro ipv6.disable=1 net.ifnamess[31;1H=0 biosdevname=0 crashkernel=auto spectre_v2=retpoline rd.lvm.lv=OtusRoot/root rd.lvm.lv=OtusRoot/swap rhgb quii[32;1Het[30;77H[?12l[?25h[?25l[1;32r[32;1H
+[1;33r[32;9Hinitrd16 /initramfs-5.9.6-1.el7.elrepo.x86_64.img[?12l[?25h[?25l[1;32r[32;1H
+[1;33r[32;1H}[?12l[?25h[?25l[1;32r[1;1H[4M[1;33r[29;1Hmenuentry 'CentOS Linux (0-rescue-38ed6a13985da84fa7889edef1062b97) 7 (Core)' --class centos --class gnu-linux  [30;1H--class gnu --class os --unrestricted $menuentry_id_option 'gnulinux-0-rescue-38ed6a13985da84fa7889edef1062b97--[31;1Hadvanced-94dacce1-1a50-455b-812d-d28e607bc9ad' {[32;9Hload_video[29;77H[?12l[?25h[32;19H[?25l[1;32r[32;1H
+[1;33r[32;9Hinsmod gzio[?12l[?25h[?25l[1;32r[32;1H
+[1;33r[32;9Hinsmod part_msdos[?12l[?25h[?25l[1;32r[32;1H
+[1;33r[32;9Hinsmod xfs[?12l[?25h[?25l[1;32r[1;1H[3M[1;33r[30;9Hset root='hd0,msdos1'[31;9Hif [ x$feature_platform_search_hint = xy ]; then[32;11Hsearch --no-floppy --fs-uuid --set=root --hint-bios=hd0,msdos1 --hint-efi=hd0,msdos1 --hint-baremetal[32;1H[94m@                                                                                                              [30;30H[?12l[?25h[31;57H[?25l[1;32r[m[32;1H
+[1;33r[31;1H          search --no-floppy --fs-uuid --set=root --hint-bios=hd0,msdos1 --hint-efi=hd0,msdos1 --hint-baremetall[32;1H=ahci0,msdos1 --hint='hd0,msdos1'  b0cc7bf9-a7c7-46bc-8f0e-0e3fe01b4d3d[31;77H[?12l[?25h[?25l[1;32r[32;1H
+[1;33r[32;9Helse[?12l[?25h[?25l[1;32r[1;1H[3M[1;33r[30;11Hsearch --no-floppy --fs-uuid --set=root b0cc7bf9-a7c7-46bc-8f0e-0e3fe01b4d3d[31;9Hfi[32;9Hlinux16 /vmlinuz-0-rescue-38ed6a13985da84fa7889edef1062b97 root=/dev/mapper/centos-root ro ipv6.disable[32;1H[94m@                                                                                                              [30;77H[?12l[?25h[31;11H[?25l[1;32r[m[1;1H[2M[1;33r[30;1H        linux16 /vmlinuz-0-rescue-38ed6a13985da84fa7889edef1062b97 root=/dev/mapper/centos-root ro ipv6.disablee[31;1H=1 net.ifnames=0 biosdevname=0 crashkernel=auto spectre_v2=retpoline rd.lvm.lv=centos/root rd.lvm.lv=centos/swaa[32;1Hp rhgb quiet[30;77H[?12l[?25h/mapper/centos[?25l-root ro ipv6.disable==[31;1H1 net.ifnames=0 biosdevname=0 crashkernel=auto spectre_v2=retpoline rd.lvm.lv=centos/root rd.lvm.lv=centos/swapp[32;1H rhgb quiet[32;12H[K[30;90H[?12l[?25h[?25l-root ro ipv6.disable=11[31;1H net.ifnames=0 biosdevname=0 crashkernel=auto spectre_v2=retpoline rd.lvm.lv=centos/root rd.lvm.lv=centos/swap  [32;1Hrhgb quiet[32;11H[K[30;89H[?12l[?25h[?25l-root ro ipv6.disable=1  [31;1Hnet.ifnames=0 biosdevname=0 crashkernel=auto spectre_v2=retpoline rd.lvm.lv=centos/root rd.lvm.lv=centos/swap rr[32;1Hhgb quiet[32;10H[K[30;88H[?12l[?25h[?25l-root ro ipv6.disable=1 nn[31;1Het.ifnames=0 biosdevname=0 crashkernel=auto spectre_v2=retpoline rd.lvm.lv=centos/root rd.lvm.lv=centos/swap rhh[32;1Hgb quiet[32;9H[K[30;87H[?12l[?25h[?25l-root ro ipv6.disable=1 nee[31;1Ht.ifnames=0 biosdevname=0 crashkernel=auto spectre_v2=retpoline rd.lvm.lv=centos/root rd.lvm.lv=centos/swap rhgg[32;1Hb quiet[32;8H[K[30;86H[?12l[?25h[?25l-root ro ipv6.disable=1 nett[31;1H.ifnames=0 biosdevname=0 crashkernel=auto spectre_v2=retpoline rd.lvm.lv=centos/root rd.lvm.lv=centos/swap rhgbb[32;1H quiet[32;7H[K[30;85H[?12l[?25h[?25lO-root ro ipv6.disable=1 nee[31;1Ht.ifnames=0 biosdevname=0 crashkernel=auto spectre_v2=retpoline rd.lvm.lv=centos/root rd.lvm.lv=centos/swap rhgg[32;1Hb quiet[30;86H[?12l[?25h[?25lt-root ro ipv6.disable=1 nn[31;1Het.ifnames=0 biosdevname=0 crashkernel=auto spectre_v2=retpoline rd.lvm.lv=centos/root rd.lvm.lv=centos/swap rhh[32;1Hgb quiet[30;87H[?12l[?25h[?25lu-root ro ipv6.disable=1  [31;1Hnet.ifnames=0 biosdevname=0 crashkernel=auto spectre_v2=retpoline rd.lvm.lv=centos/root rd.lvm.lv=centos/swap rr[32;1Hhgb quiet[30;88H[?12l[?25h[?25ls-root ro ipv6.disable=11[31;1H net.ifnames=0 biosdevname=0 crashkernel=auto spectre_v2=retpoline rd.lvm.lv=centos/root rd.lvm.lv=centos/swap  [32;1Hrhgb quiet[30;89H[?12l[?25h[?25lR-root ro ipv6.disable==[31;1H1 net.ifnames=0 biosdevname=0 crashkernel=auto spectre_v2=retpoline rd.lvm.lv=centos/root rd.lvm.lv=centos/swapp[32;1H rhgb quiet[30;90H[?12l[?25h[?25lo-root ro ipv6.disablee[31;1H=1 net.ifnames=0 biosdevname=0 crashkernel=auto spectre_v2=retpoline rd.lvm.lv=centos/root rd.lvm.lv=centos/swaa[32;1Hp rhgb quiet[30;91H[?12l[?25h[?25lo-root ro ipv6.disabll[31;1He=1 net.ifnames=0 biosdevname=0 crashkernel=auto spectre_v2=retpoline rd.lvm.lv=centos/root rd.lvm.lv=centos/sww[32;1Hap rhgb quiet[30;92H[?12l[?25h[?25lt-root ro ipv6.disabb[31;1Hle=1 net.ifnames=0 biosdevname=0 crashkernel=auto spectre_v2=retpoline rd.lvm.lv=centos/root rd.lvm.lv=centos/ss[32;1Hwap rhgb quiet[30;93H[?12l[?25h-root ro ipv6.disa
+le=1 net.ifnames=0 biosdevname=0 crashkernel=auto spectre_v2=retpoline rd.lvm.lv=centos[?25l/root rd.lvm.lv=centos/sww[32;1Hap rhgb quiet[32;14H[K[31;87H[?12l[?25h[?25l/root rd.lvm.lv=centos/swaa[32;1Hp rhgb quiet[32;13H[K[31;86H[?12l[?25h[?25l/root rd.lvm.lv=centos/swapp[32;1H rhgb quiet[32;12H[K[31;85H[?12l[?25h[?25l/root rd.lvm.lv=centos/swap  [32;1Hrhgb quiet[32;11H[K[31;84H[?12l[?25h[?25l/root rd.lvm.lv=centos/swap rr[32;1Hhgb quiet[32;10H[K[31;83H[?12l[?25h[?25l/root rd.lvm.lv=centos/swap rhh[32;1Hgb quiet[32;9H[K[31;82H[?12l[?25h[?25lO/root rd.lvm.lv=centos/swap rr[32;1Hhgb quiet[31;83H[?12l[?25h[?25lt/root rd.lvm.lv=centos/swap  [32;1Hrhgb quiet[31;84H[?12l[?25h[?25lu/root rd.lvm.lv=centos/swapp[32;1H rhgb quiet[31;85H[?12l[?25h[?25ls/root rd.lvm.lv=centos/swaa[32;1Hp rhgb quiet[31;86H[?12l[?25h[?25lR/root rd.lvm.lv=centos/sww[32;1Hap rhgb quiet[31;87H[?12l[?25h[?25lo/root rd.lvm.lv=centos/ss[32;1Hwap rhgb quiet[31;88H[?12l[?25h[?25lo/root rd.lvm.lv=centos//[32;1Hswap rhgb quiet[31;89H[?12l[?25h[?25lt/root rd.lvm.lv=centoss[32;1H/swap rhgb quiet[31;90H[?12l[?25h/root rd.lvm.lv=cento
+[?25l[31;111H//[32;1Hswap rhgb quiet[32;16H[K[31;111H[?12l[?25h[?25l/ss[32;1Hwap rhgb quiet[32;15H[K[31;110H[?12l[?25h[?25l/sww[32;1Hap rhgb quiet[32;14H[K[31;109H[?12l[?25h[?25l/swaa[32;1Hp rhgb quiet[32;13H[K[31;108H[?12l[?25h[?25l/swapp[32;1H rhgb quiet[32;12H[K[31;107H[?12l[?25h[?25l/swap  [32;1Hrhgb quiet[32;11H[K[31;106H[?12l[?25h[?25lO/swapp[32;1H rhgb quiet[31;107H[?12l[?25h[?25lt/swaa[32;1Hp rhgb quiet[31;108H[?12l[?25h[?25lu/sww[32;1Hap rhgb quiet[31;109H[?12l[?25h[?25ls/ss[32;1Hwap rhgb quiet[31;110H[?12l[?25h[?25lR//[32;1Hswap rhgb quiet[31;111H[?12l[?25h[?25loo[32;1H/swap rhgb quiet
+[?12l[?25h[?25lo/swap rhgb quiet
+o[?12l[?25h[?25lt/swap rhgb quiet
+ot[?12l[?25h[?25l[1;32r[32;1H
+[1;33r[32;9Hinitrd16 /initramfs-0-rescue-38ed6a13985da84fa7889edef1062b97.img[?12l[?25h[?25l[1;32r[32;1H
+[1;33r[32;1H}[?12l[?25h[?25l[1;32r[32;1H
+[1;33r[32;1H[?12l[?25h[?25l[1;32r[32;1H
+[1;33r[32;1H### END /etc/grub.d/10_linux ###[?12l[?25h[?25l[1;32r[32;1H
+[1;33r[32;1H[?12l[?25h[?25l[1;32r[1;1H[2M[1;33r[31;1H### BEGIN /etc/grub.d/20_linux_xen ###[?12l[?25h
+[?25l[1;32r[32;1H
+[1;33r[32;1H### END /etc/grub.d/20_linux_xen ###[?12l[?25h[?25l[1;32r[32;1H
+[1;33r[32;1H[?12l[?25h[?25l[1;32r[32;1H
+[1;33r[32;1H### BEGIN /etc/grub.d/20_ppc_terminfo ###[?12l[?25h[?25l[1;32r[1;1H[3M[1;33r[30;1H### END /etc/grub.d/20_ppc_terminfo ###
+
+### BEGIN /etc/grub.d/30_os-prober ###[30;40H[?12l[?25h
+[32;39H[?25l[1;32r[32;1H
+[1;33r[32;1H### END /etc/grub.d/30_os-prober ###[?12l[?25h[?25l[1;32r[32;1H
+[1;33r[32;1H[?12l[?25h[?25l[1;32r[1;1H[3M[1;33r[30;1H### BEGIN /etc/grub.d/40_custom ###
+# This file provides an easy way to add custom menu entries.  Simply type the
+# menu entries you want to add after this comment.  Be careful not to change[30;36H[?12l[?25h[31;78H[32;77H[?25l[1;32r[32;1H
+[1;33r[32;1H# the 'exec tail' line above.[?12l[?25h[?25l[1;32r[32;1H
+[1;33r[32;1H### END /etc/grub.d/40_custom ###[?12l[?25h[?25l[1;32r[32;1H
+[1;33r[32;1H[?12l[?25h[?25l[1;32r[32;1H
+[1;33r[32;1H### BEGIN /etc/grub.d/41_custom ###[?12l[?25h[?25l[1;32r[32;1H
+[1;33r[32;1Hif [ -f  ${config_directory}/custom.cfg ]; then[?12l[?25h[?25l[1;32r[32;1H
+[1;33r[32;3Hsource ${config_directory}/custom.cfg[?12l[?25h[?25l[1;32r[1;1H[2M[1;33r[31;1Helif [ -z "${config_directory}" -a -f  $prefix/custom.cfg ]; then
+  source $prefix/custom.cfg;[31;66H[?12l[?25h[32;29H[?25l[1;32r[32;1H
+[1;33r[32;1Hfi[?12l[?25h[?25l[1;32r[32;1H
+[1;33r[32;1H### END /etc/grub.d/41_custom ###[?12l[?25h[?25l[1;32r[32;1H
+[1;33r[32;1H###   Hi from secone stage[?12l[?25h[33;1H[K[32;26H[?25l[?12l[?25h[?25l
+:[?12l[?25hwq
+[?25l"/boot/grub2/grub.cfg" 158L, 5403C written
+
+
+[?1l>[?12l[?25h[?1049l]0;root@localhost:~[root@localhost ~]# mkinitrd -f -v /boot/initramfs-$(uname -r).img $(uname -r)
+Executing: /sbin/dracut -f -v /boot/initramfs-5.9.6-1.el7.elrepo.x86_64.img 5.9.6-1.el7.elrepo.x86_64
+dracut module 'modsign' will not be installed, because command 'keyctl' could not be found!
+dracut module 'busybox' will not be installed, because command 'busybox' could not be found!
+dracut module 'crypt' will not be installed, because command 'cryptsetup' could not be found!
+dracut module 'dmraid' will not be installed, because command 'dmraid' could not be found!
+dracut module 'dmsquash-live-ntfs' will not be installed, because command 'ntfs-3g' could not be found!
+dracut module 'mdraid' will not be installed, because command 'mdadm' could not be found!
+dracut module 'multipath' will not be installed, because command 'multipath' could not be found!
+dracut module 'cifs' will not be installed, because command 'mount.cifs' could not be found!
+dracut module 'iscsi' will not be installed, because command 'iscsistart' could not be found!
+dracut module 'iscsi' will not be installed, because command 'iscsi-iname' could not be found!
+95nfs: Could not find any command of 'rpcbind portmap'!
+dracut module 'modsign' will not be installed, because command 'keyctl' could not be found!
+dracut module 'busybox' will not be installed, because command 'busybox' could not be found!
+dracut module 'crypt' will not be installed, because command 'cryptsetup' could not be found!
+dracut module 'dmraid' will not be installed, because command 'dmraid' could not be found!
+dracut module 'dmsquash-live-ntfs' will not be installed, because command 'ntfs-3g' could not be found!
+dracut module 'mdraid' will not be installed, because command 'mdadm' could not be found!
+dracut module 'multipath' will not be installed, because command 'multipath' could not be found!
+dracut module 'cifs' will not be installed, because command 'mount.cifs' could not be found!
+dracut module 'iscsi' will not be installed, because command 'iscsistart' could not be found!
+dracut module 'iscsi' will not be installed, because command 'iscsi-iname' could not be found!
+95nfs: Could not find any command of 'rpcbind portmap'!
+*** Including module: bash ***
+*** Including module: nss-softokn ***
+*** Including module: i18n ***
+*** Including module: network ***
+*** Including module: ifcfg ***
+*** Including module: drm ***
+*** Including module: plymouth ***
+*** Including module: dm ***
+Skipping udev rule: 64-device-mapper.rules
+Skipping udev rule: 60-persistent-storage-dm.rules
+Skipping udev rule: 55-dm.rules
+*** Including module: kernel-modules ***
+*** Including module: lvm ***
+Skipping udev rule: 64-device-mapper.rules
+Skipping udev rule: 56-lvm.rules
+Skipping udev rule: 60-persistent-storage-lvm.rules
+*** Including module: qemu ***
+*** Including module: resume ***
+*** Including module: rootfs-block ***
+*** Including module: terminfo ***
+*** Including module: udev-rules ***
+Skipping udev rule: 40-redhat-cpu-hotplug.rules
+Skipping udev rule: 91-permissions.rules
+*** Including module: biosdevname ***
+*** Including module: systemd ***
+*** Including module: usrmount ***
+*** Including module: base ***
+*** Including module: fs-lib ***
+*** Including module: microcode_ctl-fw_dir_override ***
+  microcode_ctl module: mangling fw_dir
+    microcode_ctl: reset fw_dir to "/lib/firmware/updates /lib/firmware"
+    microcode_ctl: processing data directory  "/usr/share/microcode_ctl/ucode_with_caveats/intel"...
+intel: model '', path ' intel-ucode/*', kvers ''
+intel: blacklist ''
+intel: early load kernel version check for '5.9.6-1.el7.elrepo.x86_64' against ' 4.10.0 3.10.0-930 3.10.0-862.14.1 3.10.0-693.38.1 3.10.0-514.57.1 3.10.0-327.73.1' failed
+    microcode_ctl: kernel version "5.9.6-1.el7.elrepo.x86_64" failed early load check for "intel", skipping
+    microcode_ctl: processing data directory  "/usr/share/microcode_ctl/ucode_with_caveats/intel-06-2d-07"...
+intel-06-2d-07: model 'GenuineIntel 06-2d-07', path ' intel-ucode/06-2d-07', kvers ''
+intel-06-2d-07: blacklist ''
+Current CPU model 'GenuineIntel 06-9e-0d' doesn't match configuration CPU model 'GenuineIntel 06-2d-07', skipping
+    microcode_ctl: configuration "intel-06-2d-07" is ignored
+    microcode_ctl: processing data directory  "/usr/share/microcode_ctl/ucode_with_caveats/intel-06-4e-03"...
+intel-06-4e-03: model 'GenuineIntel 06-4e-03', path ' intel-ucode/06-4e-03', kvers ''
+intel-06-4e-03: blacklist ''
+Current CPU model 'GenuineIntel 06-9e-0d' doesn't match configuration CPU model 'GenuineIntel 06-4e-03', skipping
+    microcode_ctl: configuration "intel-06-4e-03" is ignored
+    microcode_ctl: processing data directory  "/usr/share/microcode_ctl/ucode_with_caveats/intel-06-4f-01"...
+intel-06-4f-01: model 'GenuineIntel 06-4f-01', path ' intel-ucode/06-4f-01', kvers ' 4.17.0 3.10.0-894 3.10.0-862.6.1 3.10.0-693.35.1 3.10.0-514.52.1 3.10.0-327.70.1 2.6.32-754.1.1 2.6.32-573.58.1 2.6.32-504.71.1 2.6.32-431.90.1 2.6.32-358.90.1'
+intel-06-4f-01: blacklist ''
+Current CPU model 'GenuineIntel 06-9e-0d' doesn't match configuration CPU model 'GenuineIntel 06-4f-01', skipping
+    microcode_ctl: configuration "intel-06-4f-01" is ignored
+    microcode_ctl: processing data directory  "/usr/share/microcode_ctl/ucode_with_caveats/intel-06-55-04"...
+intel-06-55-04: model 'GenuineIntel 06-55-04', path ' intel-ucode/06-55-04', kvers ''
+intel-06-55-04: blacklist ''
+Current CPU model 'GenuineIntel 06-9e-0d' doesn't match configuration CPU model 'GenuineIntel 06-55-04', skipping
+    microcode_ctl: configuration "intel-06-55-04" is ignored
+    microcode_ctl: processing data directory  "/usr/share/microcode_ctl/ucode_with_caveats/intel-06-5e-03"...
+intel-06-5e-03: model 'GenuineIntel 06-5e-03', path ' intel-ucode/06-5e-03', kvers ''
+intel-06-5e-03: blacklist ''
+Current CPU model 'GenuineIntel 06-9e-0d' doesn't match configuration CPU model 'GenuineIntel 06-5e-03', skipping
+    microcode_ctl: configuration "intel-06-5e-03" is ignored
+    microcode_ctl: final fw_dir: "/lib/firmware/updates /lib/firmware"
+*** Including module: shutdown ***
+*** Including modules done ***
+*** Installing kernel module dependencies and firmware ***
+*** Installing kernel module dependencies and firmware done ***
+*** Resolving executable dependencies ***
+*** Resolving executable dependencies done***
+*** Hardlinking files ***
+*** Hardlinking files done ***
+*** Stripping files ***
+*** Stripping files done ***
+*** Generating early-microcode cpio image contents ***
+*** No early-microcode cpio image needed ***
+*** Store current command line parameters ***
+*** Creating image file ***
+*** Creating image file done ***
+*** Creating initramfs image file '/boot/initramfs-5.9.6-1.el7.elrepo.x86_64.img' done ***
+]0;root@localhost:~[root@localhost ~]# exit
+exit
+
+Script done on Fri 22 Jan 2021 06:03:29 PM UTC
