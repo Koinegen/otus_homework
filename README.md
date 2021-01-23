@@ -6,5 +6,5 @@
 1. - [ ] FS и LVM
 1. - [ ] NFS FUSE
 1. - [ ] ZFS
-1. - [ ] [Загрузка системы](./boot_homework/boot.md)
+1. - [x] [Загрузка системы](./boot_homework/boot.md)
 1. - [ ] Управление пакетами
